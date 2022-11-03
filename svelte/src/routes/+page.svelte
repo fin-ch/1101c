@@ -3,7 +3,7 @@
     import { identity } from 'svelte/internal';
     // import users from '../lib/data/db.json';
     
-    $: data = fetch(`http://localhost:3000/readdb`).then(res => res.json());
+    $: data = fetch(`http://54.180.122.164:3000/readdb`).then(res => res.json());
 
 </script>
 
