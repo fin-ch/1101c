@@ -2,64 +2,89 @@
     "gps": [
         {
             "date": { "d": 8, "m": 9, "y": 1900 },
+            "time": { "h": 2, "m": 34, "s": 565, "ms": 8 },
+            "location": { "lat": 23, "lon": 25 },
+            "speed": 0,
+            "angle": 0,
+            "atenna": 0
+        },
+        {
+            "date": { "d": 8, "m": 9, "y": 1900 },
             "time": { "h": 435, "m": 543, "s": 6, "ms": 7 },
             "location": { "lat": 53, "lon": 106 },
             "speed": 0,
             "angle": 0,
             "antenna": 0
-        },
-        {
-            "date": { "d": 8, "m": 9, "y": 1900 },
-            "time": { "h": 435, "m": 543, "s": 6, "ms": 7 },
-            "location": { "lat": 100, "lon": 200 },
-            "speed": 0,
-            "angle": 0,
-            "antenna": 0
         }
+    ],
+    "haptic": [
+        { "pow": 0, "freq": 0 },
+        { "pow": 0, "freq": 0 },
+        { "pow": 0, "freq": 0 },
+        { "pow": 0, "freq": 0 },
+        { "pow": 0, "freq": 0 }
     ],
     "config": {
         "route": {
-            "startPoint": { "location": { "lat": 11, "lon": 22 } },
+            "startPoint": { "location": { "lat": 23, "lon": 25 } },
             "endPoint": { "location": { "lat": 11, "lon": 22 } },
-            "intersections": 9,
+            "intersections": "9",
             "intersectionPoint": [
                 {
-                    "location": { "lat": 11, "lon": 22 },
+                    "location": {
+                        "lat": 21.666666666666668,
+                        "lon": 24.666666666666668
+                    },
                     "ways": 1,
                     "waysAngle": [90]
                 },
                 {
-                    "location": { "lat": 11, "lon": 22 },
+                    "location": {
+                        "lat": 20.333333333333332,
+                        "lon": 24.333333333333332
+                    },
                     "ways": 1,
                     "waysAngle": [90]
                 },
                 {
-                    "location": { "lat": 11, "lon": 22 },
+                    "location": { "lat": 19, "lon": 24 },
                     "ways": 1,
                     "waysAngle": [90]
                 },
                 {
-                    "location": { "lat": 11, "lon": 22 },
+                    "location": {
+                        "lat": 17.666666666666668,
+                        "lon": 23.666666666666668
+                    },
                     "ways": 1,
                     "waysAngle": [90]
                 },
                 {
-                    "location": { "lat": 11, "lon": 22 },
+                    "location": {
+                        "lat": 16.333333333333332,
+                        "lon": 23.333333333333332
+                    },
                     "ways": 1,
                     "waysAngle": [90]
                 },
                 {
-                    "location": { "lat": 11, "lon": 22 },
+                    "location": { "lat": 15, "lon": 23 },
                     "ways": 1,
                     "waysAngle": [90]
                 },
                 {
-                    "location": { "lat": 11, "lon": 22 },
+                    "location": {
+                        "lat": 13.666666666666666,
+                        "lon": 22.666666666666668
+                    },
                     "ways": 1,
                     "waysAngle": [90]
                 },
                 {
-                    "location": { "lat": 11, "lon": 22 },
+                    "location": {
+                        "lat": 12.333333333333334,
+                        "lon": 22.333333333333332
+                    },
                     "ways": 1,
                     "waysAngle": [90]
                 },
@@ -80,8 +105,8 @@
         }
     },
     "navigate": {
-        "isSet": false,
-        "destination": { "point": 6, "angle": 90 },
+        "isSet": true,
+        "destination": { "point": "7", "angle": 90 },
         "signCount": 0
     }
 }

@@ -64,10 +64,13 @@ app.get("/readdb", (req, res) => {
 
 app.post("/updatedb/gps", (req, res) => {
     var temp;
-    var sign = new Object();
+    var sign;
     fs.readFile(dbpath, function (err, data) {
         if (err) throw err;
         temp = JSON.parse(data);
+        sign = temp.haptic;
+
+        console.log(sign);
 
         // update realtime gps data
         temp.gps[1] = temp.gps[0];
@@ -142,11 +145,13 @@ app.post("/updatedb/gps", (req, res) => {
             }
         } else {
             for (var i = 0; i < haptics; i++) {
-                sign[j].pow = 0;
-                sign[j].freq = 0;
+                sign[i].pow = 0;
+                sign[i].freq = 0;
             }
         }
         console.log(JSON.stringify(sign));
+
+        temp.haptic = sign;
 
         // modify db
         fs.writeFile(dbpath, JSON.stringify(temp), function (err) {
@@ -183,13 +188,16 @@ app.post("/updatedb/calib/:count", (req, res) => {
         temp.config.route.intersectionPoint = [];
 
         var width =
-            temp.config.route.startPoint.location.lat -
-            temp.config.route.endPoint.location.lat;
+            temp.config.route.endPoint.location.lat -
+            temp.config.route.startPoint.location.lat;
         var height =
-            temp.config.route.startPoint.location.lon -
-            temp.config.route.endPoint.location.lon;
+            temp.config.route.endPoint.location.lon -
+            temp.config.route.startPoint.location.lon;
 
         for (var i = 0; i < count; i++) {
+            console.log(temp.config.route);
+            temp.config.route.intersectionPoint[i] = new Object();
+            temp.config.route.intersectionPoint[i].location = new Object();
             temp.config.route.intersectionPoint[i].location.lat =
                 temp.config.route.startPoint.location.lat +
                 ((i + 1) * width) / count;
@@ -197,6 +205,7 @@ app.post("/updatedb/calib/:count", (req, res) => {
                 temp.config.route.startPoint.location.lon +
                 ((i + 1) * height) / count;
             temp.config.route.intersectionPoint[i].ways = 1;
+            temp.config.route.intersectionPoint[i].waysAngle = [];
             temp.config.route.intersectionPoint[i].waysAngle[0] = 90;
         }
 
