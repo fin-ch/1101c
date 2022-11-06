@@ -6,13 +6,13 @@
 <ul>
 {#each config_list as i}
     <li>
-    <button on:click={ async () => {const res = await fetch(`https://54.180.122.164:3000/updatedb/config/` + i, {method: 'POST'});} }>Update Config {i}</button>
+    <button on:click={ async () => {const res = await fetch(`54.180.122.164:3000/updatedb/config/` + i, {method: 'POST'});} }>Update Config {i}</button>
     </li>
 {/each}
-<button on:click={ async () => {const res = await fetch(`https://54.180.122.164:3000/updatedb/calib/9`, {method: 'POST'});} }>Config Calib</button>
+<button on:click={ async () => {const res = await fetch(`54.180.122.164:3000/updatedb/calib/9`, {method: 'POST'});} }>Config Calib</button>
 {#each des_list as i}
     <li>
-        <button on:click={ async () => {const res = await fetch(`https://54.180.122.164:3000/updatedb/setdestination/` + i, {method: 'POST'});} }>Set Destination {i}</button>
+        <button on:click={ async () => {const res = await fetch(`54.180.122.164:3000/updatedb/setdestination/` + i, {method: 'POST'});} }>Set Destination {i}</button>
     </li>
 {/each}
 </ul>
