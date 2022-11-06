@@ -73,6 +73,8 @@ app.post("/updatedb/gps", (req, res) => {
         temp.gps[1] = temp.gps[0];
         temp.gps[0] = req.body;
 
+        console.log("hello");
+
         // navigate
         const signCount = temp.config.device.signCount;
         const haptics = temp.config.device.haptics;
