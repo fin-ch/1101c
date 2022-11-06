@@ -152,6 +152,8 @@ app.post("/updatedb/gps", (req, res) => {
         fs.writeFile(dbpath, JSON.stringify(temp), function (err) {
             if (err) throw err;
         });
+        console.log(temp.haptic);
+        console.log(JSON.stringify(sign));
     });
     console.log(temp.haptic);
     console.log(JSON.stringify(sign));
