@@ -2,11 +2,8 @@
     import { onMount } from 'svelte';
     import { identity } from 'svelte/internal';
     // import users from '../lib/data/db.json';
-
-    // let addr = "https://localhost";
-    let addr = "https://54.180.122.164";
     
-    $: data = fetch(addr + `:3000/readdb`).then(res => res.json());
+    $: data = fetch(`https://54.180.122.164:3000/readdb`).then(res => res.json());
 
 
 </script>
