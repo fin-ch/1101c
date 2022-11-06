@@ -194,6 +194,8 @@ app.post("/updatedb/calib/:count", (req, res) => {
             temp.config.route.intersectionPoint[i].location.lon =
                 temp.config.route.startPoint.location.lon +
                 ((i + 1) * height) / count;
+            temp.config.route.intersectionPoint[i].ways = 1;
+            temp.config.route.intersectionPoint[i].waysAngle[0] = 90;
         }
 
         fs.writeFile(dbpath, JSON.stringify(temp), function (err) {
