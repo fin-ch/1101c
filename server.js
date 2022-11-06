@@ -153,7 +153,7 @@ app.post("/updatedb/gps", (req, res) => {
             if (err) throw err;
         });
     });
-    console.log(sign);
+    console.log(temp.haptic);
     console.log(JSON.stringify(sign));
     res.end(JSON.stringify(sign));
 });
