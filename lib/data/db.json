@@ -1,34 +1,47 @@
 {
-    "config": [
-        { "id": 0, "location": { "lat": 11, "long": 22 } },
-        { "id": 1, "location": { "lat": 19.9, "long": 39.8 } },
-        { "id": 2, "location": { "lat": 28.8, "long": 57.6 } },
-        { "id": 3, "location": { "lat": 26.7, "long": 53.4 } },
-        { "id": 4, "location": { "lat": 35.6, "long": 71.2 } },
-        { "id": 5, "location": { "lat": 44.5, "long": 89 } },
-        { "id": 6, "location": { "lat": 53.4, "long": 106.8 } },
-        { "id": 7, "location": { "lat": 62.3, "long": 124.6 } },
-        { "id": 8, "location": { "lat": 71.2, "long": 142.4 } },
-        { "id": 9, "location": { "lat": 80.1, "long": 160.2 } },
-        { "id": 10, "location": { "lat": 100, "long": 200 } }
-    ],
     "gps": [
         {
             "date": { "d": 8, "m": 9, "y": 1900 },
             "time": { "h": 435, "m": 543, "s": 6, "ms": 7 },
-            "location": { "lat": 53, "long": 106 },
+            "location": { "lat": 53, "lon": 106 },
             "speed": 0,
             "angle": 0,
-            "antstat": 0
+            "antenna": 0
         },
         {
             "date": { "d": 8, "m": 9, "y": 1900 },
             "time": { "h": 435, "m": 543, "s": 6, "ms": 7 },
-            "location": { "lat": 100, "long": 200 },
+            "location": { "lat": 100, "lon": 200 },
             "speed": 0,
             "angle": 0,
-            "antstat": 0
+            "antenna": 0
         }
     ],
-    "navigate": { "isSet": false, "destination": "6", "angle": 90 }
+    "config": {
+        "route": {
+            "startPoint": { "location": { "lat": 11, "lon": 22 } },
+            "endPoint": { "location": { "lat": 11, "lon": 22 } },
+            "intersections": 9,
+            "intersectionPoint": [
+                {
+                    "location": { "lat": 11, "lon": 22 },
+                    "ways": 1,
+                    "waysAngle": [90]
+                }
+            ]
+        },
+        "device": {
+            "distContd": false,
+            "dircContd": false,
+            "distRange": 60,
+            "signCount": 1,
+            "signPoint": [15],
+            "haptics": 2
+        }
+    },
+    "navigate": {
+        "isSet": false,
+        "destination": { "point": 6, "angle": 90 },
+        "signCount": 0
+    }
 }
