@@ -226,6 +226,10 @@ app.post("/updatedb/setdestination/:idx", (req, res) => {
     res.end();
 });
 
+app.post("/testhaptic", (req, res) => {
+    res.json(JSON.stringify(req.body));
+});
+
 app.use(handler);
 
 app.listen(port, () => {
