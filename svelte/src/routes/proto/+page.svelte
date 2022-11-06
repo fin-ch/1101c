@@ -4,6 +4,7 @@
 	
 	import { data } from './data.js'
 	import Update from './update.svelte'
+	
 </script>
 
 <Update />
