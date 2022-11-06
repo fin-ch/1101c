@@ -70,13 +70,9 @@ app.post("/updatedb/gps", (req, res) => {
         temp = JSON.parse(data);
         sign = temp.haptic;
 
-        console.log(sign);
-
         // update realtime gps data
         temp.gps[1] = temp.gps[0];
         temp.gps[0] = req.body;
-
-        console.log("hello");
 
         // navigate
         const signCount = temp.config.device.signCount;
@@ -149,7 +145,6 @@ app.post("/updatedb/gps", (req, res) => {
                 sign[i].freq = 0;
             }
         }
-        console.log(JSON.stringify(sign));
 
         temp.haptic = sign;
 
@@ -158,6 +153,7 @@ app.post("/updatedb/gps", (req, res) => {
             if (err) throw err;
         });
     });
+    console.log(JSON.stringify(sign));
     res.end(JSON.stringify(sign));
 });
 
@@ -195,7 +191,6 @@ app.post("/updatedb/calib/:count", (req, res) => {
             temp.config.route.startPoint.location.lon;
 
         for (var i = 0; i < count; i++) {
-            console.log(temp.config.route);
             temp.config.route.intersectionPoint[i] = new Object();
             temp.config.route.intersectionPoint[i].location = new Object();
             temp.config.route.intersectionPoint[i].location.lat =
