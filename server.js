@@ -209,7 +209,7 @@ app.post("/updatedb/setdestination/:idx", (req, res) => {
     fs.readFile(dbpath, function (err, data) {
         if (err) throw err;
         temp = JSON.parse(data);
-        temp.navigate.destination = idx;
+        temp.navigate.destination.point = idx;
         temp.navigate.isSet = true;
         fs.writeFile(dbpath, JSON.stringify(temp), function (err) {
             if (err) throw err;
