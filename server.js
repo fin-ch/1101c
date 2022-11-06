@@ -226,8 +226,31 @@ app.post("/updatedb/setdestination/:idx", (req, res) => {
     res.end();
 });
 
+app.post("/updatedb/resetdestination", (req, res) => {
+    var temp;
+    fs.readFile(dbpath, function (err, data) {
+        if (err) throw err;
+        temp = JSON.parse(data);
+        temp.navigate.destination.point = null;
+        temp.navigate.isSet = false;
+        fs.writeFile(dbpath, JSON.stringify(temp), function (err) {
+            if (err) throw err;
+        });
+    });
+    res.end();
+});
+
 app.post("/testhaptic", (req, res) => {
-    res.json(JSON.stringify(req.body));
+    var temp;
+    fs.readFile(dbpath, function (err, data) {
+        if (err) throw err;
+        temp = JSON.parse(data);
+        temp.haptic = req.body;
+        fs.writeFile(dbpath, JSON.stringify(temp), function (err) {
+            if (err) throw err;
+        });
+    });
+    res.end();
 });
 
 app.use(handler);
