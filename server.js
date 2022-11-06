@@ -153,6 +153,7 @@ app.post("/updatedb/gps", (req, res) => {
             if (err) throw err;
         });
     });
+    console.log(sign);
     console.log(JSON.stringify(sign));
     res.end(JSON.stringify(sign));
 });
