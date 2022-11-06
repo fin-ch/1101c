@@ -18,12 +18,12 @@
         }
     ],
     "haptic": [
-        { "pow": 0, "freq": 0 },
-        { "pow": 0, "freq": 0 },
-        { "pow": 0, "freq": 0 },
-        { "pow": 0, "freq": 0 },
-        { "pow": 0, "freq": 0 },
-        { "pow": 0, "freq": 0 }
+        { "pow": 0, "freq": 1 },
+        { "pow": 0, "freq": 1 },
+        { "pow": 0, "freq": 1 },
+        { "pow": 0, "freq": 1 },
+        { "pow": 0, "freq": 1 },
+        { "pow": 0, "freq": 1 }
     ],
     "config": {
         "route": {

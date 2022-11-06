@@ -142,7 +142,7 @@ app.post("/updatedb/gps", (req, res) => {
         } else {
             for (var i = 0; i < haptics; i++) {
                 sign[i].pow = 0;
-                sign[i].freq = 0;
+                sign[i].freq = 1;
             }
         }
 
