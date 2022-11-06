@@ -87,18 +87,22 @@ app.post("/updatedb/gps", (req, res) => {
                 temp.config.route.intersectionPoint[desPoint].location.lon,
             ];
 
-            const _d = distance(
-                decimalDegree(_gps[0]),
-                decimalDegree(_gps[1]),
-                decimalDegree(___gps[0]),
-                decimalDegree(___gps[1])
-            );
-            const __d = distance(
-                decimalDegree(__gps[0]),
-                decimalDegree(__gps[1]),
-                decimalDegree(___gps[0]),
-                decimalDegree(___gps[1])
-            );
+            const _d =
+                distance(
+                    decimalDegree(_gps[0]),
+                    decimalDegree(_gps[1]),
+                    decimalDegree(___gps[0]),
+                    decimalDegree(___gps[1]),
+                    "K"
+                ) / 1000;
+            const __d =
+                distance(
+                    decimalDegree(__gps[0]),
+                    decimalDegree(__gps[1]),
+                    decimalDegree(___gps[0]),
+                    decimalDegree(___gps[1]),
+                    "K"
+                ) / 1000;
 
             console.log(_d);
 
