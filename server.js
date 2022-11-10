@@ -253,6 +253,8 @@ app.post("/updatedb/setdestination", (req, res) => {
                 _idx = rnd - l[i];
             }
         }
+        console.log(l);
+        console.log(ls);
         console.log(idx);
         console.log(_idx);
         temp.navigate.destination.point = idx;
