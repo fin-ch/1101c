@@ -55,6 +55,8 @@
 
 <Update />
 
+<pre>{$storeFE}</pre>
+
 <pre>{JSON.stringify($data, undefined, 2)}</pre>
 
 <pre>{$data}</pre>
