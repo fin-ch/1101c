@@ -51,6 +51,8 @@
 	{/each}
 </ul>
 
+<button on:click={ async () => {const res = await fetch(`http://54.180.122.164:3000/updatedb/calib/`, {method: 'POST', body:JSON.stringify($storeFE)});} }>Config Calib</button>
+
 <Update />
 
 <pre>{JSON.stringify($data, undefined, 2)}</pre>
