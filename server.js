@@ -78,10 +78,10 @@ app.post("/updatedb/gps", (req, res) => {
         const signCount = temp.config.device.signCount;
         const haptics = temp.config.device.haptics;
 
-        for (var i = 0; i < 6; i++) {
-            sign[i].pow = 0;
-            sign[i].freq = 1;
-        }
+        // for (var i = 0; i < 6; i++) {
+        //     sign[i].pow = 0;
+        //     sign[i].freq = 1;
+        // }
 
         // navigate_isSet is true ... means there is destination
         if (temp.navigate.isSet) {
