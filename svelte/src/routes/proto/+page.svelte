@@ -9,7 +9,7 @@
 	$storeLI = [];
 
 	$storeHP = [
-					{ pow: 100, freq: 2 },
+					{ pow: 200, freq: 2 },
 					{ pow: 0, freq: 1 },
 					{ pow: 0, freq: 1 },
 					{ pow: 0, freq: 1 },
@@ -50,6 +50,11 @@
 	}
 	
 </script>
+
+<div>
+	<input bind:value={ $storeHP[0].pow }>
+	<input bind:value= {$storeHP[0].pow}>
+</div>
 
 <input bind:value={ count }>
 
