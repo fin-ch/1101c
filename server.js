@@ -111,7 +111,7 @@ app.post("/updatedb/gps", (req, res) => {
 
             // cycle go through signPoint
             if (_d < temp.config.device.signPoint[count]) {
-                temp.navigate.config.navigate.count += 1;
+                temp.navigate.count += 1;
 
                 // direction is not continuous
                 if (dircContd == false) {
