@@ -242,6 +242,8 @@ app.post("/updatedb/setdestination", (req, res) => {
         if (err) throw err;
         temp = JSON.parse(data);
         for (var i = 0; i < temp.config.route.intersections; i++) {
+            console.log(i);
+            console.log(temp.config.route.intersectionPoint.ways);
             l[i + 1] = ls + temp.config.route.intersectionPoint.ways;
             ls += l[i + 1];
         }
