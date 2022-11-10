@@ -108,6 +108,6 @@
     "navigate": {
         "isSet": false,
         "destination": { "point": "7", "angle": 90 },
-        "signCount": 0
+        "count": 0
     }
 }

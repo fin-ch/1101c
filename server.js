@@ -76,8 +76,11 @@ app.post("/updatedb/gps", (req, res) => {
 
         // navigate
         const signCount = temp.config.device.signCount;
+        const count = temp.config.navigate.count;
         const haptics = temp.config.device.haptics;
         const angle = temp.navigate.destination.angle;
+
+        // navigate_isSet is true ... means there is destination
         if (temp.navigate.isSet) {
             const _gps = [temp.gps[0].location.lat, temp.gps[0].location.lon];
             const __gps = [temp.gps[1].location.lat, temp.gps[1].location.lon];
@@ -86,7 +89,6 @@ app.post("/updatedb/gps", (req, res) => {
                 temp.config.route.intersectionPoint[desPoint].location.lat,
                 temp.config.route.intersectionPoint[desPoint].location.lon,
             ];
-
             const _d =
                 distance(
                     decimalDegree(_gps[0]),
@@ -106,44 +108,47 @@ app.post("/updatedb/gps", (req, res) => {
 
             console.log(_d);
 
-            for (var i = 0; i < signCount; i++) {
-                if (_d < temp.config.device.signPoint[i]) {
-                    temp.config.device.signCount += 1;
-                    if (dircContd == false) {
-                        for (var j = 0; j < haptics; j++) {
-                            sign[j].freq = (127 * (i + 0)) / signCount;
-                            if (
-                                (360 / haptics) * j < angle &&
-                                (360 / haptics) * (j + 1) > angle
-                            ) {
-                                sign[j].pow = 100;
-                            } else {
-                                sign[j].pow = 0;
-                            }
-                        }
-                    } else {
-                        var _angle = angle - (360 / haptics) * 0.5;
-                        if (_angle < 0) _angle += 360;
+            // cycle go through signPoint
+            if (_d < temp.config.device.signPoint[count]) {
+                temp.config.navigate.count += 1;
 
-                        var r = _angle % (360 / haptics);
-                        var _r = parseInt(_angle / (360 / haptics));
-
-                        for (var j = 0; j < haptics + 1; j++) {
-                            sign[j % haptics].freq =
-                                (127 * (i + 0)) / signCount;
-                            if (j == _r) {
-                                sign[j].pow = (100 * r) / (360 / haptics);
-                            } else if (j == _r + 1) {
-                                sign[j % haptics].pow =
-                                    100 - (100 * r) / (360 / haptics);
-                            } else {
-                                sign[j].pow = 0;
-                            }
+                // direction is not continuous
+                if (dircContd == false) {
+                    for (var j = 0; j < haptics; j++) {
+                        sign[j].freq = (127 * (count + 1)) / signCount;
+                        if (
+                            (360 / haptics) * j < angle &&
+                            (360 / haptics) * (j + 1) > angle
+                        ) {
+                            sign[j].pow = 100;
+                        } else {
+                            sign[j].pow = 0;
                         }
                     }
                 } else {
-                    sign[i].pow = 0;
-                    sign[i].freq = 1;
+                    var _angle = angle - (360 / haptics) * 0.5;
+                    if (_angle < 0) _angle += 360;
+
+                    var r = _angle % (360 / haptics);
+                    var _r = parseInt(_angle / (360 / haptics));
+
+                    for (var j = 0; j < haptics + 1; j++) {
+                        sign[j % haptics].freq =
+                            (127 * (count + 1)) / signCount;
+                        if (j == _r) {
+                            sign[j].pow = (100 * r) / (360 / haptics);
+                        } else if (j == _r + 1) {
+                            sign[j % haptics].pow =
+                                100 - (100 * r) / (360 / haptics);
+                        } else {
+                            sign[j].pow = 0;
+                        }
+                    }
+                }
+            } else {
+                for (var j = 0; i < haptics; i++) {
+                    sign[j].freq = 1;
+                    sign[j].pow = 0;
                 }
             }
         } else {
@@ -209,9 +214,15 @@ app.post("/updatedb/calib/", (req, res) => {
             temp.config.route.intersectionPoint[i].location.lon =
                 temp.config.route.startPoint.location.lon +
                 ((i + 1) * height) / count;
-            temp.config.route.intersectionPoint[i].ways = 1;
+            temp.config.route.intersectionPoint[i].ways = parseInt(
+                _temp[i].ways
+            );
             temp.config.route.intersectionPoint[i].waysAngle = [];
-            temp.config.route.intersectionPoint[i].waysAngle[0] = 90;
+            for (var j = 0; j < parseInt(_temp[i].ways); j++) {
+                temp.config.route.intersectionPoint[i].waysAngle[j] = parseInt(
+                    _temp[i].wayAngle[j]
+                );
+            }
         }
 
         fs.writeFile(dbpath, JSON.stringify(temp), function (err) {
@@ -229,6 +240,7 @@ app.post("/updatedb/setdestination/:idx", (req, res) => {
         temp = JSON.parse(data);
         temp.navigate.destination.point = idx;
         temp.navigate.isSet = true;
+        temp.navigate.count = 0;
         fs.writeFile(dbpath, JSON.stringify(temp), function (err) {
             if (err) throw err;
         });
@@ -243,6 +255,7 @@ app.post("/updatedb/resetdestination", (req, res) => {
         temp = JSON.parse(data);
         temp.navigate.destination.point = null;
         temp.navigate.isSet = false;
+        temp.navigate.count = null;
         fs.writeFile(dbpath, JSON.stringify(temp), function (err) {
             if (err) throw err;
         });
