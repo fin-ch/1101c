@@ -298,6 +298,8 @@ app.post("/testhaptic", (req, res) => {
         if (err) throw err;
         temp = JSON.parse(data);
         temp.haptic = req.body;
+        console.log(req.body);
+        console.log(temp.haptic);
         fs.writeFile(dbpath, JSON.stringify(temp), function (err) {
             if (err) throw err;
         });
