@@ -2,11 +2,19 @@
 	// Made by Kevmodrome (twitter.com/kevmodrome)
 	// Party on 🥳
 	
-	import { data, storeFE, storeLI } from './data.js'
+	import { data, storeFE, storeLI, storeHP } from './data.js'
 	import Item from './Item.svelte'
 	import Update from './update.svelte'
 
 	$storeLI = [];
+
+	$storeHP = [
+					{ pow: 100, freq: 2 },
+					{ pow: 0, freq: 1 },
+					{ pow: 0, freq: 1 },
+					{ pow: 0, freq: 1 },
+					{ pow: 0, freq: 1 },
+					{ pow: 0, freq: 1 }];
 
 	$storeFE = [{id:0, ways:0, wayAngle:[]},
 					{id:1, ways:0, wayAngle:[]},
