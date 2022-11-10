@@ -1,6 +1,6 @@
 <script>
 	import { fade } from 'svelte/transition';
-	import { storeFE } from './store.js';
+	import { storeFE } from './data.js';
 	export let objAttributes = {};
 	
 	function removeComponent() {
