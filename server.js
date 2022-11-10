@@ -187,9 +187,7 @@ app.post("/updatedb/config/:idx", (req, res) => {
 
 app.post("/updatedb/calib/", (req, res) => {
     var _temp = req.body;
-    console.log(_temp);
     var count = _temp.length;
-    console.log(_temp.length);
     var temp;
     fs.readFile(dbpath, function (err, data) {
         if (err) throw err;
@@ -224,6 +222,17 @@ app.post("/updatedb/calib/", (req, res) => {
                 );
             }
         }
+
+        const _d =
+            distance(
+                temp.config.route.startPoint.location.lat,
+                temp.config.route.startPoint.location.lon,
+                temp.config.route.endPoint.location.lat,
+                temp.config.route.endPoint.location.lon,
+                "K"
+            ) / 1000;
+
+        console.log("Distance is " + _d);
 
         fs.writeFile(dbpath, JSON.stringify(temp), function (err) {
             if (err) throw err;
@@ -277,6 +286,7 @@ app.post("/updatedb/resetdestination", (req, res) => {
         if (err) throw err;
         temp = JSON.parse(data);
         temp.navigate.destination.point = null;
+        temp.navigate.destination.angle = null;
         temp.navigate.isSet = false;
         temp.navigate.count = null;
         fs.writeFile(dbpath, JSON.stringify(temp), function (err) {
