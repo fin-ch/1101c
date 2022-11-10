@@ -11,6 +11,6 @@
 	}
 </script>
 <li transition:fade>
-	{objAttributes.ways} {objAttributes.wayAngle}
+	{objAttributes.id} {objAttributes.ways} {objAttributes.wayAngle}
 	<button on:click={removeComponent}>x</button>
 </li>

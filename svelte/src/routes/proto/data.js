@@ -30,4 +30,3 @@ export const data = createDataStore();
 
 export let storeFE = writable({});
 export let storeLI = writable({});
-export let idIncrement = writable({});

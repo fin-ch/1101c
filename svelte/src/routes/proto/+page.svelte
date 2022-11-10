@@ -2,7 +2,7 @@
 	// Made by Kevmodrome (twitter.com/kevmodrome)
 	// Party on 🥳
 	
-	import { data, storeFE, storeLI, idIncrement } from './data.js'
+	import { data, storeFE, storeLI } from './data.js'
 	import Item from './Item.svelte'
 	import Update from './update.svelte'
 
@@ -12,8 +12,6 @@
 
 	let count = 0;
 
-	idIncrement.set(1);
-
 	function addList() {
 		var l = 0;
 		if($storeLI != undefined) l = $storeLI.length;
@@ -22,10 +20,10 @@
 	}
 
 	function addItem() {
-		var l = $storeFE.length;
-		$storeFE[l] = {id:$idIncrement, ways:$storeLI.length, wayAngle:$storeLI};
+		var l = 0;
+		if($storeFE != undefined) l = $storeFE.length;
+		$storeFE[l] = {id:l, ways:$storeLI.length, wayAngle:$storeLI};
 		console.log($storeFE);
-		$idIncrement++;
 	}
 	
 </script>
