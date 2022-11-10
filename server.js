@@ -182,7 +182,9 @@ app.post("/updatedb/config/:idx", (req, res) => {
 
 app.post("/updatedb/calib/", (req, res) => {
     var _temp = req.body;
+    console.log(_temp);
     var count = _temp.length;
+    console.log(_temp.length);
     var temp;
     fs.readFile(dbpath, function (err, data) {
         if (err) throw err;
