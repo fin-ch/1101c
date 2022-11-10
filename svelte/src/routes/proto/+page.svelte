@@ -29,6 +29,8 @@
 		if($storeFE != undefined) l = $storeFE.length;
 		$storeFE[l] = {id:l, ways:$storeLI.length, wayAngle:lst};
 		console.log($storeFE);
+		
+		removeList();
 	}
 	
 </script>

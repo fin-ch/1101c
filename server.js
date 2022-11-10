@@ -180,8 +180,9 @@ app.post("/updatedb/config/:idx", (req, res) => {
     res.end();
 });
 
-app.post("/updatedb/calib/:count", (req, res) => {
-    var count = req.params.count;
+app.post("/updatedb/calib/", (req, res) => {
+    var _temp = req.body;
+    var count = _temp.length;
     var temp;
     fs.readFile(dbpath, function (err, data) {
         if (err) throw err;
