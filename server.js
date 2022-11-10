@@ -76,12 +76,13 @@ app.post("/updatedb/gps", (req, res) => {
 
         // navigate
         const signCount = temp.config.device.signCount;
-        const count = temp.config.navigate.count;
         const haptics = temp.config.device.haptics;
-        const angle = temp.navigate.destination.angle;
 
         // navigate_isSet is true ... means there is destination
         if (temp.navigate.isSet) {
+            const count = temp.navigate.count;
+            const angle = temp.navigate.destination.angle;
+
             const _gps = [temp.gps[0].location.lat, temp.gps[0].location.lon];
             const __gps = [temp.gps[1].location.lat, temp.gps[1].location.lon];
             const desPoint = temp.navigate.destination.point;
