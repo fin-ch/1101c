@@ -232,13 +232,30 @@ app.post("/updatedb/calib/", (req, res) => {
     res.end();
 });
 
-app.post("/updatedb/setdestination/:idx", (req, res) => {
-    var idx = req.params.idx;
+app.post("/updatedb/setdestination", (req, res) => {
+    var idx, _idx;
     var temp;
+    var l = [0];
+    var ls = 0;
+    var rnd;
     fs.readFile(dbpath, function (err, data) {
         if (err) throw err;
         temp = JSON.parse(data);
+        for (var i = 0; i < temp.config.route.intersections; i++) {
+            l[i + 1] = ls + temp.config.route.intersectionPoint.ways;
+            ls += l[i + 1];
+        }
+        rnd = Math.floor(Math.random() * ls);
+
+        for (var i = 0; i < temp.config.route.intersections + 1; i++) {
+            if (rnd >= l[i] && rnd < l[i + 1]) {
+                idx = i;
+                _idx = rnd - l[i];
+            }
+        }
         temp.navigate.destination.point = idx;
+        temp.navigate.destination.angle =
+            temp.config.route.intersectionPoint.waysAngle[_idx];
         temp.navigate.isSet = true;
         temp.navigate.count = 0;
         fs.writeFile(dbpath, JSON.stringify(temp), function (err) {
