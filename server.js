@@ -292,7 +292,7 @@ app.post("/updatedb/resetdestination", (req, res) => {
     res.end();
 });
 
-app.post("/testhaptic", (req, res) => {
+app.post("/updatedb/testhaptic", (req, res) => {
     var temp;
     fs.readFile(dbpath, function (err, data) {
         if (err) throw err;
