@@ -28,5 +28,5 @@ function createDataStore(url) {
 
 export const data = createDataStore();
 
-export let storeFE = writeable({});
-export let idIncrement = writeable({});
+export let storeFE = writable({});
+export let idIncrement = writable({});
