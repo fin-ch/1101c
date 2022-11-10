@@ -78,6 +78,11 @@ app.post("/updatedb/gps", (req, res) => {
         const signCount = temp.config.device.signCount;
         const haptics = temp.config.device.haptics;
 
+        for (var i = 0; i < 6; i++) {
+            sign[i].pow = 0;
+            sign[i].freq = 1;
+        }
+
         // navigate_isSet is true ... means there is destination
         if (temp.navigate.isSet) {
             const count = temp.navigate.count;
@@ -121,9 +126,9 @@ app.post("/updatedb/gps", (req, res) => {
                             (360 / haptics) * j < angle &&
                             (360 / haptics) * (j + 1) > angle
                         ) {
-                            sign[j].pow = 100;
+                            sign[temp.config.device.hapticsIdx[j]].pow = 100;
                         } else {
-                            sign[j].pow = 0;
+                            sign[temp.config.device.hapticsIdx[j]].pow = 0;
                         }
                     }
                 } else {
@@ -146,20 +151,10 @@ app.post("/updatedb/gps", (req, res) => {
                         }
                     }
                 }
-            } else {
-                for (var j = 0; i < haptics; i++) {
-                    sign[j].freq = 1;
-                    sign[j].pow = 0;
-                }
-            }
-        } else {
-            for (var i = 0; i < haptics; i++) {
-                sign[i].pow = 0;
-                sign[i].freq = 1;
             }
         }
 
-        temp.haptic = sign;
+        // temp.haptic = sign;
 
         // modify db
         fs.writeFile(dbpath, JSON.stringify(temp), function (err) {
