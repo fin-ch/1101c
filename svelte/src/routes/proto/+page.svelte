@@ -43,19 +43,6 @@
 	
 </script>
 
-<div>
-	<h1>GPS data</h1>
-	<p>
-		{$data.gps[0].date.y}:{$data.gps[0].date.m}:{$data.gp[0].date.d} ... {$data.gps[0].time.h}:{$data.gps[0].time.m}:{$data.gps[0].time.s}.{$data.gps[0].time.ms} <br>
-		(lat, long): ({$data.gps[0].location.lat}, {$data.gps[0].location.lon}) <br>
-		speed: {$data.gps[0].speed}, angle: {$data.gps[0].angle}, antenna: {$data.gps[0].antenna} <br>
-	</p>
-	<h1>CONFIG data</h1>
-	<p>
-		startPoint: 
-	</p>
-</div>
-
 <input bind:value={ count }>
 
 <button on:click={ addList }>Add a list</button>
