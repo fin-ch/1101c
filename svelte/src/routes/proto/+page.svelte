@@ -16,8 +16,12 @@
 		console.log($storeFE);
 		$idIncrement++;
 	}
+
+	let count = 0;
 	
 </script>
+
+<input bind:value={ count }>
 
 <button on:click={ addItem }>Add on item</button>
 
