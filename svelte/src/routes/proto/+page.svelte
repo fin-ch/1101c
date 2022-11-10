@@ -19,10 +19,15 @@
 		console.log($storeLI);
 	}
 
+	function removeList() {
+		$storeLI  = [];
+	}
+
 	function addItem() {
 		var l = 0;
+		var lst = $storeLI;
 		if($storeFE != undefined) l = $storeFE.length;
-		$storeFE[l] = {id:l, ways:$storeLI.length, wayAngle:$storeLI};
+		$storeFE[l] = {id:l, ways:$storeLI.length, wayAngle:lst};
 		console.log($storeFE);
 	}
 	
@@ -33,6 +38,8 @@
 <button on:click={ addList }>Add a list</button>
 
 <div>{ $storeLI }</div>
+
+<button on:click={ removeList }>rmv</button>
 
 <button on:click={ addItem }>Add on item</button>
 
