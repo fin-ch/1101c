@@ -114,7 +114,7 @@ app.post("/updatedb/gps", (req, res) => {
                 temp.navigate.count += 1;
 
                 // direction is not continuous
-                if (dircContd == false) {
+                if (temp.config.device.dircContd == false) {
                     for (var j = 0; j < haptics; j++) {
                         sign[j].freq = (127 * (count + 1)) / signCount;
                         if (
