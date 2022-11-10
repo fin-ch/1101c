@@ -210,10 +210,10 @@ app.post("/updatedb/calib/", (req, res) => {
             temp.config.route.intersectionPoint[i].location = new Object();
             temp.config.route.intersectionPoint[i].location.lat =
                 temp.config.route.startPoint.location.lat +
-                ((i + 1) * width) / count;
+                ((i + 1) * width) / (count + 1);
             temp.config.route.intersectionPoint[i].location.lon =
                 temp.config.route.startPoint.location.lon +
-                ((i + 1) * height) / count;
+                ((i + 1) * height) / (count + 1);
             temp.config.route.intersectionPoint[i].ways = parseInt(
                 _temp[i].ways
             );
@@ -255,7 +255,7 @@ app.post("/updatedb/setdestination", (req, res) => {
         }
         temp.navigate.destination.point = idx;
         temp.navigate.destination.angle =
-            temp.config.route.intersectionPoint.waysAngle[_idx];
+            temp.config.route.intersectionPoint[idx].waysAngle[_idx];
         temp.navigate.isSet = true;
         temp.navigate.count = 0;
         fs.writeFile(dbpath, JSON.stringify(temp), function (err) {

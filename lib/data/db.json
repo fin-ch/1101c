@@ -29,72 +29,8 @@
         "route": {
             "startPoint": { "location": { "lat": 23, "lon": 25 } },
             "endPoint": { "location": { "lat": 11, "lon": 22 } },
-            "intersections": "9",
-            "intersectionPoint": [
-                {
-                    "location": {
-                        "lat": 21.666666666666668,
-                        "lon": 24.666666666666668
-                    },
-                    "ways": 1,
-                    "waysAngle": [90]
-                },
-                {
-                    "location": {
-                        "lat": 20.333333333333332,
-                        "lon": 24.333333333333332
-                    },
-                    "ways": 1,
-                    "waysAngle": [90]
-                },
-                {
-                    "location": { "lat": 19, "lon": 24 },
-                    "ways": 1,
-                    "waysAngle": [90]
-                },
-                {
-                    "location": {
-                        "lat": 17.666666666666668,
-                        "lon": 23.666666666666668
-                    },
-                    "ways": 1,
-                    "waysAngle": [90]
-                },
-                {
-                    "location": {
-                        "lat": 16.333333333333332,
-                        "lon": 23.333333333333332
-                    },
-                    "ways": 1,
-                    "waysAngle": [90]
-                },
-                {
-                    "location": { "lat": 15, "lon": 23 },
-                    "ways": 1,
-                    "waysAngle": [90]
-                },
-                {
-                    "location": {
-                        "lat": 13.666666666666666,
-                        "lon": 22.666666666666668
-                    },
-                    "ways": 1,
-                    "waysAngle": [90]
-                },
-                {
-                    "location": {
-                        "lat": 12.333333333333334,
-                        "lon": 22.333333333333332
-                    },
-                    "ways": 1,
-                    "waysAngle": [90]
-                },
-                {
-                    "location": { "lat": 11, "lon": 22 },
-                    "ways": 1,
-                    "waysAngle": [90]
-                }
-            ]
+            "intersections": null,
+            "intersectionPoint": []
         },
         "device": {
             "distContd": false,

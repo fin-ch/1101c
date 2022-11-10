@@ -8,7 +8,15 @@
 
 	$storeLI = [];
 
-	$storeFE = [{id:0, ways:1, wayAngle:[90]}];
+	$storeFE = [{id:0, ways:0, wayAngle:[]},
+					{id:1, ways:0, wayAngle:[]},
+					{id:2, ways:0, wayAngle:[]},
+					{id:3, ways:0, wayAngle:[]},
+					{id:4, ways:0, wayAngle:[]},
+					{id:5, ways:2, wayAngle:[90, 270]},
+					{id:6, ways:3, wayAngle:[90, 240, 300]},
+					{id:7, ways:4, wayAngle:[60, 120, 240, 300]},
+					{id:8, ways:2, wayAngle:[90, 270]}];
 
 	let count = 0;
 
