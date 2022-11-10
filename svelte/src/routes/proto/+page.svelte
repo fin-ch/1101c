@@ -34,6 +34,8 @@
 
 <button on:click={ addList }>Add a list</button>
 
+<div>{ $storeLI }</div>
+
 <button on:click={ addItem }>Add on item</button>
 
 <ul>
