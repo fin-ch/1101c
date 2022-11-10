@@ -9,15 +9,13 @@ function createDataStore(url) {
     });
 
     function initiate() {
-        let iterations = 1;
         if (!intervalId) {
             intervalId = setInterval(async () => {
                 const response = await fetch(
                     `http://54.180.122.164:3000/readdb`
                 );
                 set(await response.json());
-                iterations = iterations + 1;
-            }, 1000);
+            }, 500);
         }
     }
 
@@ -29,3 +27,6 @@ function createDataStore(url) {
 }
 
 export const data = createDataStore();
+
+export let storeFE = writeable({});
+export let idIncrement = writeable({});

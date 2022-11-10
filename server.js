@@ -141,6 +141,9 @@ app.post("/updatedb/gps", (req, res) => {
                             }
                         }
                     }
+                } else {
+                    sign[i].pow = 0;
+                    sign[i].freq = 1;
                 }
             }
         } else {
