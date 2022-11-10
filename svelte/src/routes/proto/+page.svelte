@@ -53,7 +53,17 @@
 
 <div>
 	<input bind:value={ $storeHP[0].pow }>
-	<input bind:value= {$storeHP[0].pow}>
+	<input bind:value= {$storeHP[0].freq} >
+	<input bind:value={ $storeHP[1].pow }>
+	<input bind:value= {$storeHP[1].freq} >
+	<input bind:value={ $storeHP[2].pow }>
+	<input bind:value= {$storeHP[2].freq} >
+	<input bind:value={ $storeHP[3].pow }>
+	<input bind:value= {$storeHP[3].freq} >
+	<input bind:value={ $storeHP[4].pow }>
+	<input bind:value= {$storeHP[4].freq} >
+	<input bind:value={ $storeHP[5].pow }>
+	<input bind:value= {$storeHP[5].freq} >
 </div>
 
 <input bind:value={ count }>
