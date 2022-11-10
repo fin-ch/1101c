@@ -38,7 +38,8 @@
             "distRange": 60,
             "signCount": 1,
             "signPoint": [15],
-            "haptics": 2
+            "haptics": 2,
+            "hapticsIdx": [1, 4]
         }
     },
     "navigate": {
