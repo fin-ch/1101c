@@ -228,7 +228,7 @@ app.post("/updatedb/calib/", (req, res) => {
                 "K"
             ) / 1000;
 
-        console.log("Distance is " + _d);
+        temp.config.route.dist = _d;
 
         fs.writeFile(dbpath, JSON.stringify(temp), function (err) {
             if (err) throw err;
