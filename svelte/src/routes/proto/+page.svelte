@@ -2,7 +2,7 @@
 	// Made by Kevmodrome (twitter.com/kevmodrome)
 	// Party on 🥳
 	
-	import { data, storeFE, storeLI, storeHP, data } from './data.js'
+	import { data, storeFE, storeLI, storeHP } from './data.js'
 	import Item from './Item.svelte'
 	import Update from './update.svelte'
 
