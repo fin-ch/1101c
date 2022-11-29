@@ -82,7 +82,7 @@
 
 <pre>{JSON.stringify($data, undefined, 2)}</pre>
 
-{#if $data == undefined}
+{#if $data.config.route == undefined}
 {:else}
 	<div>{$data.config.route.startPoint.location.lat}</div>
 {/if}
