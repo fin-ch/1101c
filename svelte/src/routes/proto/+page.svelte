@@ -85,7 +85,7 @@
 {#await $data}
 	<p>LOADING ...</p>
 {:then $data}
-	<div>{$data["config"]}</div>
+	<div>{$data["config"]["route"]}</div>
 {:catch error}
 	<p>ERROR</p>
 {/await}
