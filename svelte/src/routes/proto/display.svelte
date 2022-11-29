@@ -1,8 +1,9 @@
 <script>
     import { data, storeFE, storeHP } from './data.js'
+    let config_lst = ["startPoint", "endPoint"];
 </script>
 
-<div class="font-mono text-sm flex flex-wrap justify-center">
+<div class="font-mono text-sm grid grid-cols-2 justify-center">
 {#if $data == undefined}
 	<div class="font-bold mx-4 my-2">loading</div>
 {:else}
@@ -82,4 +83,17 @@
 		</div>
 	{/if}
 {/if}
+
+<div class="border-0 mx-6 my-2 rounded-xl grid grid-cols-1 justify-items-center place-content-center bg-slate-100">
+	<div class="mx-4 my-0.5 grid grid-cols-1 content-start">
+	{#each config_lst as i}
+    	<button class="mx-4 my-2 py-0.5 px-4 w-64 rounded-lg shadow-md text-white bg-blue-500" on:click={ async () => {const res = await fetch(`http://54.180.122.164:3000/updatedb/config/` + i, {method: 'POST'});} }>Update Config {i}</button>
+	{/each}
+	</div>
+	<div class="mx-4 my-0.5 grid grid-cols-1 content-start">
+		<button class="mx-4 my-2 py-0.5 px-4 w-64 rounded-lg shadow-md text-white bg-blue-500" on:click={ async () => {const res = await fetch(`http://54.180.122.164:3000/updatedb/calib/`, {method: 'POST', body:JSON.stringify($storeFE), headers:{'Content-Type': 'application/json'}});} }>Config Calib</button>
+		<button class="mx-4 my-2 py-0.5 px-4 w-64 rounded-lg shadow-md text-white bg-blue-500" on:click={ async () => {const res = await fetch(`http://54.180.122.164:3000/updatedb/resetdestination/`, {method: 'POST'});} }>Reset Destination</button>
+		<button class="mx-4 my-2 py-0.5 px-4 w-64 rounded-lg shadow-md text-white bg-blue-500" on:click={ async () => {const res = await fetch(`http://54.180.122.164:3000/updatedb/setdestination/`, {method: 'POST'});} }>Set Destination</button>
+	</div>
+</div>
 </div>
