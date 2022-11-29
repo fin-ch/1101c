@@ -48,6 +48,8 @@
 		
 		removeList();
 	}
+
+	var tmp0 = $data.config.route.startPoint.location.lat;
 	
 </script>
 
@@ -82,4 +84,4 @@
 
 <pre>{JSON.stringify($data, undefined, 2)}</pre>
 
-<pre>{$data.config.route}</pre>
+<pre>{ tmp0 }</pre>
