@@ -52,12 +52,12 @@
 </script>
 
 <div>
-	<input bind:value={ $storeHP[0].pow }><input bind:value={ $storeHP[0].freq }>
-	<input bind:value={ $storeHP[1].pow }><input bind:value={ $storeHP[1].freq }>
-	<input bind:value={ $storeHP[2].pow }><input bind:value={ $storeHP[2].freq }>
-	<input bind:value={ $storeHP[3].pow }><input bind:value={ $storeHP[3].freq }>
-	<input bind:value={ $storeHP[4].pow }><input bind:value={ $storeHP[4].freq }>
-	<input bind:value={ $storeHP[5].pow }><input bind:value={ $storeHP[5].freq }>
+	drv 0 ... <input bind:value={ $storeHP[0].pow }><input bind:value={ $storeHP[0].freq }><br>
+	drv 1 ... <input bind:value={ $storeHP[1].pow }><input bind:value={ $storeHP[1].freq }><br>
+	drv 2 ... <input bind:value={ $storeHP[2].pow }><input bind:value={ $storeHP[2].freq }><br>
+	drv 3 ... <input bind:value={ $storeHP[3].pow }><input bind:value={ $storeHP[3].freq }><br>
+	drv 4 ... <input bind:value={ $storeHP[4].pow }><input bind:value={ $storeHP[4].freq }><br>
+	drv 5 ... <input bind:value={ $storeHP[5].pow }><input bind:value={ $storeHP[5].freq }><br>
 </div>
 
 <input bind:value={ count }>
@@ -77,6 +77,10 @@
 </ul>
 
 <Update />
+
+<div>
+	lat is {$data.gps[0].location.lat}.
+</div>
 
 <pre>{JSON.stringify($storeFE, undefined, 2)}</pre>
 
