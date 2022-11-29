@@ -103,7 +103,7 @@
 				No navigation data
 			{:else}
 				destination ... {$data.navigate.destination.point} point, {$data.navigate.destination.angle} angle<br>
-				count ... {$data.navigate.destination.count}<br>
+				count ... {$data.navigate.count}<br>
 			{/if}
 		</p>
 	{/if}
@@ -123,7 +123,7 @@
 		<h1>route data</h1>
 		<p>startPoint ... ({$data.config.route.startPoint.location.lat}, {$data.config.route.startPoint.location.lon})<br>
 			endPoint ... ({$data.config.route.endPoint.location.lat}, {$data.config.route.endPoint.location.lon})<br>
-			distance ... {$data.config.route.dist}<br>
+			distance ... {$data.config.route.dist} m<br>
 			{#if $data.config.route.intersections == null}
 				intersections ... null<br>
 			{:else}

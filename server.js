@@ -102,7 +102,7 @@ app.post("/updatedb/gps", (req, res) => {
                     decimalDegree(___gps[0]),
                     decimalDegree(___gps[1]),
                     "K"
-                ) / 1000;
+                ) * 1000;
             const __d =
                 distance(
                     decimalDegree(__gps[0]),
@@ -110,7 +110,7 @@ app.post("/updatedb/gps", (req, res) => {
                     decimalDegree(___gps[0]),
                     decimalDegree(___gps[1]),
                     "K"
-                ) / 1000;
+                ) * 1000;
 
             console.log(_d);
 
@@ -226,7 +226,7 @@ app.post("/updatedb/calib/", (req, res) => {
                 temp.config.route.endPoint.location.lat,
                 temp.config.route.endPoint.location.lon,
                 "K"
-            ) / 1000;
+            ) * 1000;
 
         temp.config.route.dist = _d;
 
