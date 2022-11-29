@@ -102,8 +102,8 @@
 			{#if $data.navigate.isSet == false}
 				No navigation data
 			{:else}
-				destination ... {$data.Navigate.destination.point} point, {$data.Navigate.destination.angle} angle<br>
-				count ... {$data.Navigate.destination.count}<br>
+				destination ... {$data.navigate.destination.point} point, {$data.navigate.destination.angle} angle<br>
+				count ... {$data.navigate.destination.count}<br>
 			{/if}
 		</p>
 	{/if}
