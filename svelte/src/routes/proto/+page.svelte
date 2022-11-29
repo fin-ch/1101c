@@ -52,7 +52,7 @@
 </script>
 
 <div>
-	drv 0 ... <input bind:value={ $storeHP[0].pow }><input bind:value={ $storeHP[0].freq }><br>
+	drv 0 ... <input class="border-2 border-indigo-500/100" bind:value={ $storeHP[0].pow }><input bind:value={ $storeHP[0].freq }><br>
 	drv 1 ... <input bind:value={ $storeHP[1].pow }><input bind:value={ $storeHP[1].freq }><br>
 	drv 2 ... <input bind:value={ $storeHP[2].pow }><input bind:value={ $storeHP[2].freq }><br>
 	drv 3 ... <input bind:value={ $storeHP[3].pow }><input bind:value={ $storeHP[3].freq }><br>
