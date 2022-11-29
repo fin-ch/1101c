@@ -6,7 +6,8 @@
             "location": { "lat": 23, "lon": 25 },
             "speed": 0,
             "angle": 0,
-            "atenna": 0
+            "atenna": 0,
+            "delta": 0
         },
         {
             "date": { "d": 8, "m": 9, "y": 1900 },
@@ -14,7 +15,8 @@
             "location": { "lat": 53, "lon": 106 },
             "speed": 0,
             "angle": 0,
-            "antenna": 0
+            "antenna": 0,
+            "delta": 0
         }
     ],
     "haptic": [
@@ -46,6 +48,7 @@
     "navigate": {
         "isSet": false,
         "destination": { "point": "7", "angle": 90 },
+        "delta": 0,
         "count": 0
     },
     "test": "testdata"

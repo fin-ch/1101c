@@ -77,6 +77,19 @@ app.post("/updatedb/gps", (req, res) => {
         // navigate
         const signCount = temp.config.device.signCount;
         const haptics = temp.config.device.haptics;
+        const _gps = [temp.gps[0].location.lat, temp.gps[0].location.lon];
+        const __gps = [temp.gps[1].location.lat, temp.gps[1].location.lon];
+
+        const d =
+            distance(
+                decimalDegree(_gps[0]),
+                decimalDegree(_gps[1]),
+                decimalDegree(__gps[0]),
+                decimalDegree(__gps[1]),
+                "K"
+            ) * 1000;
+
+        temp.gps[0].delta = d;
 
         // for (var i = 0; i < 6; i++) {
         //     sign[i].pow = 0;
@@ -88,13 +101,12 @@ app.post("/updatedb/gps", (req, res) => {
             const count = temp.navigate.count;
             const angle = temp.navigate.destination.angle;
 
-            const _gps = [temp.gps[0].location.lat, temp.gps[0].location.lon];
-            const __gps = [temp.gps[1].location.lat, temp.gps[1].location.lon];
             const desPoint = temp.navigate.destination.point;
             const ___gps = [
                 temp.config.route.intersectionPoint[desPoint].location.lat,
                 temp.config.route.intersectionPoint[desPoint].location.lon,
             ];
+
             const _d =
                 distance(
                     decimalDegree(_gps[0]),
@@ -113,6 +125,7 @@ app.post("/updatedb/gps", (req, res) => {
                 ) * 1000;
 
             console.log(_d);
+            temp.navigate.delta = _d;
 
             // cycle go through signPoint
             if (_d < temp.config.device.signPoint[count]) {
