@@ -55,7 +55,7 @@
 		<div class="font-bold mx-2 my-2">loading config data</div>
 		</div>
 	{:else}
-        <div class="border-0 mx-6 my-2 rounded-xl grid grid-cols-1 justify-items-center bg-slate-100 min-w-1/2">
+        <div class="border-0 mx-2 my-2 rounded-xl grid grid-cols-1 justify-items-center bg-slate-100 min-w-1/2">
 		<div class="font-bold mx-2 my-2">device data</div>
 		<div class="mx-2 my-2">
 			distContd: {$data.config.device.distContd}<br>

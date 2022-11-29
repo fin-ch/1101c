@@ -10,7 +10,7 @@
 		console.log($storeFE);
 	}
 </script>
-<li transition:fade>
-	{objAttributes.id} {objAttributes.ways} {objAttributes.wayAngle}
-	<button on:click={removeComponent}>x</button>
-</li>
+<div>
+	<span class="text-bold">{objAttributes.id}</span> {objAttributes.ways} {objAttributes.wayAngle}
+	<button class="py-0.5 px-2 rounded-lg shadow-md text-white bg-red-500" on:click={removeComponent}>x</button>
+</div>
