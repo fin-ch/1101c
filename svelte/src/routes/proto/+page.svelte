@@ -82,10 +82,8 @@
 
 <pre>{JSON.stringify($data, undefined, 2)}</pre>
 
-{#await $data}
-	<p>LOADING ...</p>
-{:then $data}
-	<div>{$data["config"]["route"]}</div>
-{:catch error}
-	<p>ERROR</p>
-{/await}
+{#if $data.config == undefined}
+	<p>loading</p>
+{:else}
+	<div>{$data.config.route}</div>
+{/if}
