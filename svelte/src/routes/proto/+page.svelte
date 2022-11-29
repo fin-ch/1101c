@@ -78,7 +78,7 @@
 
 <Update />
 
-<pre>{$data.gps[0].location.lat}</pre>
+<pre>{$data.gps[0]}</pre>
 
 <pre>{JSON.stringify($storeFE, undefined, 2)}</pre>
 
