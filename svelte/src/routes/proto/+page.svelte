@@ -85,7 +85,7 @@
 {#await $data}
 	<p>LOADING ...</p>
 {:then $data}
-	<div>{$data.config.route.startPoint.location.lat}</div>
+	<div>{$data["test"]}</div>
 {:catch error}
 	<p>ERROR</p>
 {/await}
