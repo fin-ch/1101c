@@ -1,9 +1,8 @@
 <script>
     import { data, storeFE, storeHP } from './data.js'
-    let config_list = ["startPoint", "endPoint"];
 </script>
 
-<div>
+<div class="font-mono text-sm flex flex-wrap justify-center">
 {#if $data == undefined}
 	<div class="font-bold mx-4 my-2">loading</div>
 {:else}
