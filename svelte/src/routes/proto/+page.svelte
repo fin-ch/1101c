@@ -117,11 +117,21 @@
 					itrsc {i} ... ({location.lat}, {location.lon}) point, {ways} ways, {waysAngle} angles<br>
 				{/each}
 			{/if}
+
+			device ...<br>
+			distContd: {$data.config.device.distContd}<br>
+			dircContd: {$data.config.device.dircContd}<br>
+			distRange: {$data.config.device.distRange}<br>
+			signCount: {$data.config.device.signCount}<br>
+			signPoint: {$data.config.device.signPoint}<br>
+			haptics: {$data.config.device.haptics} ({$data.config.device.hapticsIdx})<br>
+
 		</p>
 	{/if}
 	{#if $data.navigate == undefined}
 		<p>loading navigate data</p>
 	{:else}
+		<h1>navigate data</h1>
 		<p>
 			{#if $data.navigate.isSet == false}
 				No navigation data
