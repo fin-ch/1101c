@@ -94,6 +94,19 @@
 			point ... ({$data.gps[0].location.lat}, {$data.gps[0].location.lon})<br>
 		</p>
 	{/if}
+	{#if $data.navigate == undefined}
+		<p>loading navigate data</p>
+	{:else}
+		<h1>navigate data</h1>
+		<p>
+			{#if $data.navigate.isSet == false}
+				No navigation data
+			{:else}
+				destination ... {$data.Navigate.destination.point} point, {$data.Navigate.destination.angle} angle<br>
+				count ... {$data.Navigate.destination.count}<br>
+			{/if}
+		</p>
+	{/if}
 	{#if $data.haptic == undefined}
 		<p>loading haptic data</p>
 	{:else}
@@ -107,7 +120,7 @@
 	{#if $data.config == undefined}
 		<p>loading config data</p>
 	{:else}
-		<h1>config data</h1>
+		<h1>route data</h1>
 		<p>startPoint ... ({$data.config.route.startPoint.location.lat}, {$data.config.route.startPoint.location.lon})<br>
 			endPoint ... ({$data.config.route.endPoint.location.lat}, {$data.config.route.endPoint.location.lon})<br>
 			{#if $data.config.route.intersections == null}
@@ -117,28 +130,15 @@
 					itrsc {i} ... ({location.lat}, {location.lon}) point, {ways} ways, {waysAngle} angles<br>
 				{/each}
 			{/if}
-
-			device ...<br>
+		</p>
+		<h1>device data</h1>
+		<p>
 			distContd: {$data.config.device.distContd}<br>
 			dircContd: {$data.config.device.dircContd}<br>
 			distRange: {$data.config.device.distRange}<br>
 			signCount: {$data.config.device.signCount}<br>
 			signPoint: {$data.config.device.signPoint}<br>
 			haptics: {$data.config.device.haptics} ({$data.config.device.hapticsIdx})<br>
-
-		</p>
-	{/if}
-	{#if $data.navigate == undefined}
-		<p>loading navigate data</p>
-	{:else}
-		<h1>navigate data</h1>
-		<p>
-			{#if $data.navigate.isSet == false}
-				No navigation data
-			{:else}
-				destination ... {$data.Navigate.destination.point} point, {$data.Navigate.destination.angle} angle<br>
-				count ... {$data.Navigate.destination.count}<br>
-			{/if}
 		</p>
 	{/if}
 {/if}
