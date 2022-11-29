@@ -2,7 +2,7 @@
 	// Made by Kevmodrome (twitter.com/kevmodrome)
 	// Party on 🥳
 	
-	import { data, storeFE, storeLI, storeHP } from './data.js'
+	import { data, storeFE, storeLI, storeHP, data } from './data.js'
 	import Item from './Item.svelte'
 	import Update from './update.svelte'
 
@@ -48,8 +48,6 @@
 		
 		removeList();
 	}
-
-	var tmp0 = $data.config.route.startPoint.location.lat;
 	
 </script>
 
@@ -84,4 +82,7 @@
 
 <pre>{JSON.stringify($data, undefined, 2)}</pre>
 
-<pre>{ tmp0 }</pre>
+{#if $data == undefined}
+{:else}
+	<div>{$data.config.route.startPoint.location.lat}</div>
+{/if}
