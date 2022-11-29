@@ -29,6 +29,7 @@
         "route": {
             "startPoint": { "location": { "lat": 23, "lon": 25 } },
             "endPoint": { "location": { "lat": 11, "lon": 22 } },
+            "dist": null,
             "intersections": null,
             "intersectionPoint": []
         },

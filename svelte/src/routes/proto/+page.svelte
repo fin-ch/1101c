@@ -123,6 +123,7 @@
 		<h1>route data</h1>
 		<p>startPoint ... ({$data.config.route.startPoint.location.lat}, {$data.config.route.startPoint.location.lon})<br>
 			endPoint ... ({$data.config.route.endPoint.location.lat}, {$data.config.route.endPoint.location.lon})<br>
+			distance ... {$data.config.route.dist}<br>
 			{#if $data.config.route.intersections == null}
 				intersections ... null<br>
 			{:else}
