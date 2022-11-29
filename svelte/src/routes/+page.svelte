@@ -2,7 +2,7 @@
     import { onMount } from 'svelte';
     import { identity } from 'svelte/internal';
     // import users from '../lib/data/db.json';
-    import TailwindCss from './TailwindCSS.svelte';
+    import TailwindCss from '../TailwindCSS.svelte';
 </script>
 
 <TailwindCss />
