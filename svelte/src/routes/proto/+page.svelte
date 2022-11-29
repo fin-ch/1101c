@@ -113,7 +113,9 @@
 			{#if $data.config.route.intersections == null}
 				intersections ... null<br>
 			{:else}
-				no!!<br>
+				{#each $data.config.route.intersectionPoint as { location, ways, waysAngle }, i}
+					itrsc {i} ... ({location.lat}, {location.lon}) point, {ways} ways, {waysAngle} angles<br>
+				{/each}
 			{/if}
 		</p>
 	{/if}
