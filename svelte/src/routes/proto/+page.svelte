@@ -57,7 +57,7 @@
 
 <Display/>
 
-<div class="font-mono text-xs grid grid-cols-2 justify-center">
+<div class="font-mono text-xs grid grid-cols-1 justify-center">
 
 <div class="border-0 mx-2 my-2 rounded-xl grid grid-cols-1 justify-items-center bg-slate-100">
 	<div class="font-bold mx-2 my-2">ctrl haptic manually</div>
