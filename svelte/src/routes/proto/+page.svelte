@@ -78,9 +78,9 @@
 
 <Update />
 
-<pre>{JSON.stringify($storeFE, undefined, 2)}</pre>
+<!-- <pre>{JSON.stringify($storeFE, undefined, 2)}</pre> -->
 
-<pre>{JSON.stringify($data, undefined, 2)}</pre>
+<!-- <pre>{JSON.stringify($data, undefined, 2)}</pre> -->
 
 {#if $data == undefined}
 	<p>loading</p>
