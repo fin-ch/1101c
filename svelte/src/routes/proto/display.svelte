@@ -11,7 +11,7 @@
 		<div class="font-bold mx-4 my-2">loading GPS data</div>
 	{:else}
 		<div class="font-bold mx-4 my-2">GPS data</div>
-		<div class="mx-4 my-0.5">
+		<div class="mx-4 my-2">
 			date ... {$data.gps[0].date.d}.{$data.gps[0].date.m}.{$data.gps[0].date.y}<br>
 			time ... {$data.gps[0].time.h}:{$data.gps[0].time.m}:{$data.gps[0].time.s}.{$data.gps[0].time.ms}<br>
 			point ... ({$data.gps[0].location.lat}, {$data.gps[0].location.lon})<br>
@@ -25,7 +25,7 @@
 		<div class="font-bold mx-4 my-2">loading navigate data</div>
 	{:else}
 		<div class="font-bold mx-4 my-2">navigate data</div>
-		<div class="mx-4 my-0.5">
+		<div class="mx-4 my-2">
 			{#if $data.navigate.isSet == false}
 				No navigation data
 			{:else}
@@ -41,7 +41,7 @@
 		<div class="font-bold mx-4 my-2">loading haptic data</div>
 	{:else}
 		<div class="font-bold mx-4 my-2">haptic data</div>
-		<div class="mx-4 my-0.5">
+		<div class="mx-4 my-2">
 			{#each $data.haptic as { pow, freq }, i}
 				drv {i} ... {pow} pow, {freq} freq<br>
 			{/each}
@@ -56,7 +56,7 @@
 	{:else}
 		<div class="border-0 mx-6 my-2 rounded-xl grid grid-cols-1 justify-items-center bg-slate-100">
 		<div class="font-bold mx-4 my-2">route data</div>
-		<div class="mx-4 my-0.5">
+		<div class="mx-4 my-2">
 			startPoint ... ({$data.config.route.startPoint.location.lat}, {$data.config.route.startPoint.location.lon})<br>
 			endPoint ... ({$data.config.route.endPoint.location.lat}, {$data.config.route.endPoint.location.lon})<br>
 			distance ... {$data.config.route.dist} m<br>
@@ -71,7 +71,7 @@
 		</div>
 		<div class="border-0 mx-6 my-2 rounded-xl grid grid-cols-1 justify-items-center bg-slate-100">
 		<div class="font-bold mx-4 my-2">device data</div>
-		<div class="mx-4 my-0.5">
+		<div class="mx-4 my-2">
 			distContd: {$data.config.device.distContd}<br>
 			dircContd: {$data.config.device.dircContd}<br>
 			distRange: {$data.config.device.distRange}<br>
