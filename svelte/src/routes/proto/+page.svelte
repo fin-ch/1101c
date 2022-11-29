@@ -117,20 +117,13 @@
 					itrsc {i} ... ({location.lat}, {location.lon}) point, {ways} ways, {waysAngle} angles<br>
 				{/each}
 			{/if}
-			device ...<br>
-			distContd: {$data.device.distContd}<br>
-			dircContd: {$data.device.dircContd}<br>
-			distRange: {$data.device.distRange}<br>
-			signCount: {$data.device.signCount}<br>
-			signPoint: {$data.device.signPoint}<br>
-			haptics: {$data.device.haptics} ({$data.device.hapticsIdx})<br>
 		</p>
 	{/if}
 	{#if $data.navigate == undefined}
 		<p>loading navigate data</p>
 	{:else}
 		<p>
-			{#if $data.navigate == false}
+			{#if $data.navigate.isSet == false}
 				No navigation data
 			{:else}
 				destination ... {$data.Navigate.destination.point} point, {$data.Navigate.destination.angle} angle<br>
