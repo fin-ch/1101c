@@ -60,21 +60,20 @@
 	drv 5 ... <input bind:value={ $storeHP[5].pow }><input bind:value={ $storeHP[5].freq }><br>
 </div>
 
-<input bind:value={ count }>
+<div>
+	<input bind:value={ count }>
+	<button on:click={ addList }>Add a list</button>
 
-<button on:click={ addList }>Add a list</button>
+	<div>{ $storeLI }</div>
+	<button on:click={ removeList }>rmv</button>
+	<button on:click={ addItem }>Add on item</button>
 
-<div>{ $storeLI }</div>
-
-<button on:click={ removeList }>rmv</button>
-
-<button on:click={ addItem }>Add on item</button>
-
-<ul>
-	{#each $storeFE as item}
-			<li><svelte:component this={Item} objAttributes={item}/></li>
-	{/each}
-</ul>
+	<ul>
+		{#each $storeFE as item}
+				<li><svelte:component this={Item} objAttributes={item}/></li>
+		{/each}
+	</ul>
+</div>
 
 <Update />
 
@@ -92,7 +91,7 @@
 		<p>date ... {$data.gps[0].date.d}.{$data.gps[0].date.m}.{$data.gps[0].date.y}<br>
 			time ... {$data.gps[0].time.h}:{$data.gps[0].time.m}:{$data.gps[0].time.s}.{$data.gps[0].time.ms}<br>
 			point ... ({$data.gps[0].location.lat}, {$data.gps[0].location.lon})<br>
-			delta ... {$data.gps[0].delta}<br>
+			delta ... {$data.gps[0].delta} m<br>
 		</p>
 	{/if}
 	{#if $data.navigate == undefined}

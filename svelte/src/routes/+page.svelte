@@ -2,11 +2,10 @@
     import { onMount } from 'svelte';
     import { identity } from 'svelte/internal';
     // import users from '../lib/data/db.json';
+    import TailwindCss from './TailwindCSS.svelte';
 </script>
 
-<style>
-
-</style>
+<TailwindCss />
 
 <h1>Welcome to SvelteKit</h1>
 <h2>This will be run on the express server.</h2>
