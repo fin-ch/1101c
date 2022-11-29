@@ -78,9 +78,6 @@
 
 <Update />
 
-<div>
-	lat is {$data.gps[0].location.lat}.
-</div>
 
 <pre>{JSON.stringify($storeFE, undefined, 2)}</pre>
 
