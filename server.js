@@ -262,8 +262,8 @@ app.post("/updatedb/setdestination", (req, res) => {
         for (var i = 0; i < temp.config.route.intersections; i++) {
             console.log(i);
             console.log(temp.config.route.intersectionPoint[i].ways);
-            l[i + 1] = ls + temp.config.route.intersectionPoint[i].ways;
-            ls += l[i + 1];
+            l[i + 1] = l[i] + temp.config.route.intersectionPoint[i].ways;
+            ls = l[i + 1];
         }
         rnd = Math.floor(Math.random() * ls);
         console.log(rnd);
