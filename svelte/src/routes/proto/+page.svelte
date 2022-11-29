@@ -109,6 +109,14 @@
 	{:else}
 		<h1>config data</h1>
 		<p>startPoint ... ({$data.config.route.startPoint.location.lat}, {$data.config.route.startPoint.location.lon})<br>
-			endPoint ... ({$data.config.route.endPoint.location.lat}, {$data.config.route.endPoint.location.lon})<br></p>
+			endPoint ... ({$data.config.route.endPoint.location.lat}, {$data.config.route.endPoint.location.lon})<br>
+			{#if $data.config.route.intersections == null}
+				intersections ... null<br>
+			{:else}
+				{#each $data.config.route.intersectionPoint as { loc, ways, waysangle }, i}
+					itrsc {i} ... ({loc.lat}, {loc.lon}) point, {ways} ways, {waysangle} angles<br>
+				{/each}
+			{/if}
+		</p>
 	{/if}
 {/if}
