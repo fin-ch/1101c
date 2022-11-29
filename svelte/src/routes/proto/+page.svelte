@@ -86,17 +86,18 @@
 	<p>loading</p>
 {:else}
 	{#if $data.gps == undefined}
-		<p>loading gps</p>
+		<p>loading GPS data</p>
 	{:else}
+		<h1>GPS data</h1>
 		<p>date ... {$data.gps[0].date.d}.{$data.gps[0].date.m}.{$data.gps[0].date.y}<br>
 			time ... {$data.gps[0].time.h}:{$data.gps[0].time.m}:{$data.gps[0].time.s}.{$data.gps[0].time.ms}<br>
-			lat ... {$data.gps[0].location.lat}<br>
-			lon ... {$data.gps[0].location.lon}<br>
+			(lat, lon) ... ({$data.gps[0].location.lat}, {$data.gps[0].location.lon})<br>
 		</p>
 	{/if}
 	{#if $data.config == undefined}
-		<p>loading config</p>
+		<p>loading config data</p>
 	{:else}
-		<p>show me lat ... {$data.config.route.startPoint.loaction.lat}</p>
+		<h1>config data</h1>
+		<p>startPoint ... ({$data.config.route.startPoint.location.lat}, {$data.config.route.startPoint.location.lon})</p>
 	{/if}
 {/if}
