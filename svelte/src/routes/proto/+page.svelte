@@ -82,8 +82,17 @@
 
 <pre>{JSON.stringify($data, undefined, 2)}</pre>
 
-{#if $data.config == undefined}
+{#if $data == undefined}
 	<p>loading</p>
 {:else}
-	<p>show me lat ... {$data.config.route.startPoint.loaction.lat}</p>
+	{#if $data.gps == undefined}
+		<p>loading gps</p>
+	{:else}
+		<p>show me lat ... {$data.gps[0].location.lat}</p>
+	{/if}
+	{#if $data.config == undefined}
+		<p>loading config</p>
+	{:else}
+		<p>show me lat ... {$data.config.route.startPoint.loaction.lat}</p>
+	{/if}
 {/if}
