@@ -62,7 +62,7 @@
 
 <div>
 	<input bind:value={ count }>
-	<button on:click={ addList }>Add a list</button>
+	<button class="py-2 px-4 rounded-lg shadow-md text-white bg-blue-500" on:click={ addList }>Add a list</button>
 
 	<div>{ $storeLI }</div>
 	<button on:click={ removeList }>rmv</button>
