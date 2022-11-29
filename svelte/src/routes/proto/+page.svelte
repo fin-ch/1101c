@@ -8,6 +8,8 @@
 
 	$storeLI = [];
 
+	let drv_lst = [0, 1, 2, 3, 4, 5];
+
 	$storeHP = [
 					{ pow: 0, freq: 1 },
 					{ pow: 0, freq: 1 },
@@ -51,13 +53,10 @@
 	
 </script>
 
-<div>
-	drv 0 ... <input class="p-4 border-2 border-indigo-500/100" bind:value={ $storeHP[0].pow }><input bind:value={ $storeHP[0].freq }><br>
-	drv 1 ... <input bind:value={ $storeHP[1].pow }><input bind:value={ $storeHP[1].freq }><br>
-	drv 2 ... <input bind:value={ $storeHP[2].pow }><input bind:value={ $storeHP[2].freq }><br>
-	drv 3 ... <input bind:value={ $storeHP[3].pow }><input bind:value={ $storeHP[3].freq }><br>
-	drv 4 ... <input bind:value={ $storeHP[4].pow }><input bind:value={ $storeHP[4].freq }><br>
-	drv 5 ... <input bind:value={ $storeHP[5].pow }><input bind:value={ $storeHP[5].freq }><br>
+<div class="border-spacing-4">
+	{#each drv_lst as i}
+		<p>drv {i}} ...</p><input class="border-2 border-indigo-500/100" bind:value={ $storeHP[i].pow }><input bind:value={ $storeHP[i].freq }><br>
+	{/each}
 </div>
 
 <div>
