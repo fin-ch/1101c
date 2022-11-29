@@ -266,6 +266,7 @@ app.post("/updatedb/setdestination", (req, res) => {
             ls += l[i + 1];
         }
         rnd = Math.floor(Math.random() * ls);
+        console.log(rnd);
 
         for (var i = 0; i < temp.config.route.intersections + 1; i++) {
             if (rnd >= l[i] && rnd < l[i + 1]) {
