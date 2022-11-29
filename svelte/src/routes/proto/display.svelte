@@ -55,18 +55,18 @@
 		<div class="font-bold mx-4 my-2">loading config data</div>
 		</div>
 	{:else}
+        <div class="border-0 mx-6 my-2 rounded-xl grid grid-cols-1 justify-items-center bg-slate-100">
+		<div class="font-bold mx-4 my-2">device data</div>
+		<div class="mx-4 my-2">
+			distContd: {$data.config.device.distContd}<br>
+			dircContd: {$data.config.device.dircContd}<br>
+			distRange: {$data.config.device.distRange}<br>
+			signCount: {$data.config.device.signCount}<br>
+			signPoint: {$data.config.device.signPoint}<br>
+			haptics: {$data.config.device.haptics} ({$data.config.device.hapticsIdx})<br>
+		</div>
+		</div>
 		<div class="border-0 mx-6 my-2 rounded-xl grid grid-cols-1 justify-items-center bg-slate-100">
-            <div class="border-0 mx-6 my-2 rounded-xl grid grid-cols-1 justify-items-center bg-slate-100">
-                <div class="font-bold mx-4 my-2">device data</div>
-                <div class="mx-4 my-2">
-                    distContd: {$data.config.device.distContd}<br>
-                    dircContd: {$data.config.device.dircContd}<br>
-                    distRange: {$data.config.device.distRange}<br>
-                    signCount: {$data.config.device.signCount}<br>
-                    signPoint: {$data.config.device.signPoint}<br>
-                    haptics: {$data.config.device.haptics} ({$data.config.device.hapticsIdx})<br>
-                </div>
-                </div>
         <div class="font-bold mx-4 my-2">route data</div>
 		<div class="mx-4 my-2">
 			startPoint ... ({$data.config.route.startPoint.location.lat}, {$data.config.route.startPoint.location.lon})<br>
