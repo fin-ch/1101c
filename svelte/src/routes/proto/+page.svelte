@@ -92,6 +92,7 @@
 		<p>date ... {$data.gps[0].date.d}.{$data.gps[0].date.m}.{$data.gps[0].date.y}<br>
 			time ... {$data.gps[0].time.h}:{$data.gps[0].time.m}:{$data.gps[0].time.s}.{$data.gps[0].time.ms}<br>
 			point ... ({$data.gps[0].location.lat}, {$data.gps[0].location.lon})<br>
+			delta ... {$data.gps[0].delta}<br>
 		</p>
 	{/if}
 	{#if $data.navigate == undefined}
