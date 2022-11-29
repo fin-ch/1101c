@@ -31,7 +31,8 @@
 				No navigation data
 			{:else}
 				destination ... {$data.navigate.destination.point} point, {$data.navigate.destination.angle} angle<br>
-				count ... {$data.navigate.count}<br>
+				delta ... {$data.navigate.delta}<br>
+                count ... {$data.navigate.count}<br>
 			{/if}
 		</div>
 	{/if}
