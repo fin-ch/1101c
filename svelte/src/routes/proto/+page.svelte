@@ -85,5 +85,5 @@
 {#if $data.config == undefined}
 	<p>loading</p>
 {:else}
-	<div>show me lat ... {$data.config.route.startPoint.loaction.lat}</div>
+	<p>show me lat ... {$data.config.route.startPoint.loaction.lat}</p>
 {/if}
