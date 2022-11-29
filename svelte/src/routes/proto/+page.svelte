@@ -78,10 +78,8 @@
 
 <Update />
 
-<pre>{$data.config.route.startPoint.location.lat}</pre>
-
 <pre>{JSON.stringify($storeFE, undefined, 2)}</pre>
 
 <pre>{JSON.stringify($data, undefined, 2)}</pre>
 
-<pre>{$data}</pre>
+<pre>{$data.config}</pre>
