@@ -75,8 +75,9 @@
 			{#if $data.config.route.intersections == null}
 				intersections ... null<br>
 			{:else}
+                <br>
 				{#each $data.config.route.intersectionPoint as { location, ways, waysAngle }, i}
-					itrsc {i} ... ({location.lat}, {location.lon}) point, {ways} ways, {waysAngle} angles<br>
+					itrsc {i} ... ({location.lat}, {location.lon})<br>{ways} ways, {waysAngle} angles<br>
 				{/each}
 			{/if}
 		</div>
