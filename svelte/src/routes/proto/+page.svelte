@@ -53,43 +53,47 @@
 	
 </script>
 
-<div class="font-mono text-sm flex flex-col">
+<div class="font-mono text-xs flex flex-col">
 
 <Display/>
 
-<div class="border-0 mx-6 my-2 rounded-xl grid grid-cols-1 justify-items-center bg-slate-100">
-	<div class="font-bold mx-4 my-2">ctrl haptic manually</div>
+<div class="font-mono text-xs grid grid-cols-2 justify-center">
+
+<div class="border-0 mx-2 my-2 rounded-xl grid grid-cols-1 justify-items-center bg-slate-100">
+	<div class="font-bold mx-2 my-2">ctrl haptic manually</div>
 
 	{#each drv_lst as i}
-		<div class="mx-4 my-0.5">drv {i} ...
-		pow:<input class="mx-4 my-2 py-0.5 w-24 border-0 rounded-lg bg-white shadow-md text-center" bind:value={ $storeHP[i].pow }>
-		freq:<input class="mx-4 my-2 py-0.5 w-24 border-0 rounded-lg bg-white shadow-md text-center" bind:value={ $storeHP[i].freq }></div>
+		<div class="mx-2 my-0.5">drv {i} ...
+		pow:<input class="mx-2 my-2 py-0.5 w-24 border-0 rounded-lg bg-white shadow-md text-center" bind:value={ $storeHP[i].pow }>
+		freq:<input class="mx-2 my-2 py-0.5 w-24 border-0 rounded-lg bg-white shadow-md text-center" bind:value={ $storeHP[i].freq }></div>
 	{/each}
-	<div class="mx-4 my-0.5">
-		<button class="mx-4 my-2 py-0.5 px-4 w-36 rounded-lg shadow-md text-white bg-blue-500" on:click={ async () => {const res = await fetch(`http://54.180.122.164:3000/updatedb/testhaptic/`, {method: 'POST', body:JSON.stringify($storeHP), headers:{'Content-Type': 'application/json'}});} }>test</button>
+	<div class="mx-2 my-0.5">
+		<button class="mx-2 my-2 py-0.5 px-4 w-36 rounded-lg shadow-md text-white bg-blue-500" on:click={ async () => {const res = await fetch(`http://54.180.122.164:3000/updatedb/testhaptic/`, {method: 'POST', body:JSON.stringify($storeHP), headers:{'Content-Type': 'application/json'}});} }>test</button>
 	</div>
 </div>
 
-<div class="border-0 mx-6 my-2 rounded-xl grid grid-cols-1 justify-items-center bg-slate-100">
-	<div class="font-bold mx-4 my-2">adjust intersection and angle</div>
-	<div class="mx-4 my-0.5">
-		<input class="mx-4 my-2 py-0.5 w-36 border-0 rounded-lg bg-white shadow-md text-center" bind:value={ count }>
-		<button class="mx-4 my-2 py-0.5 px-4 w-36 rounded-lg shadow-md text-white bg-blue-500" on:click={ addList }>Add a list</button>
+<div class="border-0 mx-2 my-2 rounded-xl grid grid-cols-1 justify-items-center bg-slate-100">
+	<div class="font-bold mx-2 my-2">adjust intersection and angle</div>
+	<div class="mx-2 my-0.5">
+		<input class="mx-2 my-2 py-0.5 w-36 border-0 rounded-lg bg-white shadow-md text-center" bind:value={ count }>
+		<button class="mx-2 my-2 py-0.5 px-4 w-36 rounded-lg shadow-md text-white bg-blue-500" on:click={ addList }>Add a list</button>
 	</div>
 	{#if $storeLI.length == 0}
-		<div class="mx-4 my-0.5">nothing in tmp</div>
+		<div class="mx-2 my-0.5">nothing in tmp</div>
 	{:else}
-		<div class="mx-4 my-0.5">{ $storeLI }</div>
+		<div class="mx-2 my-0.5">{ $storeLI }</div>
 	{/if}
-	<div class="mx-4 my-0.5">
-		<button class="mx-4 my-2 py-0.5 px-4 w-36 rounded-lg shadow-md text-white bg-blue-500" on:click={ removeList }>rmv</button>
-		<button class="mx-4 my-2 py-0.5 px-4 w-36 rounded-lg shadow-md text-white bg-blue-500" on:click={ addItem }>Add on item</button>
+	<div class="mx-2 my-0.5">
+		<button class="mx-2 my-2 py-0.5 px-4 w-36 rounded-lg shadow-md text-white bg-blue-500" on:click={ removeList }>rmv</button>
+		<button class="mx-2 my-2 py-0.5 px-4 w-36 rounded-lg shadow-md text-white bg-blue-500" on:click={ addItem }>Add on item</button>
 	</div>
-	<div class="mx-4 my-0.5">
+	<div class="mx-2 my-0.5">
 		{#each $storeFE as item}
-			<div class="mx-4 my-2 py-0.5 w-72 text-left"><svelte:component this={Item} objAttributes={item}/></div>
+			<div class="mx-2 my-2 py-0.5 w-72 text-left"><svelte:component this={Item} objAttributes={item}/></div>
 		{/each}
 	</div>
+</div>
+
 </div>
 
 </div>
