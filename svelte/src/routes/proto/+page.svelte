@@ -82,4 +82,4 @@
 
 <pre>{JSON.stringify($data, undefined, 2)}</pre>
 
-<pre>{$data.config}</pre>
+<pre>{$data.config.route}</pre>
