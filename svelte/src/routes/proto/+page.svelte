@@ -78,7 +78,7 @@
 
 <Update />
 
-<pre>{$data.gps[0]}</pre>
+<pre>{$data.config.route.startPoint.location.lat}</pre>
 
 <pre>{JSON.stringify($storeFE, undefined, 2)}</pre>
 
