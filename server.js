@@ -234,10 +234,10 @@ app.post("/updatedb/calib/", (req, res) => {
 
         const _d =
             distance(
-                temp.config.route.startPoint.location.lat,
-                temp.config.route.startPoint.location.lon,
-                temp.config.route.endPoint.location.lat,
-                temp.config.route.endPoint.location.lon,
+                decimalDegree(temp.config.route.startPoint.location.lat),
+                decimalDegree(temp.config.route.startPoint.location.lon),
+                decimalDegree(temp.config.route.endPoint.location.lat),
+                decimalDegree(temp.config.route.endPoint.location.lon),
                 "K"
             ) * 1000;
 
