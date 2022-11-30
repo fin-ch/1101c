@@ -10,6 +10,9 @@
 
 	let drv_lst = [0, 1, 2, 3, 4, 5];
 
+	let pow_lst = [0, 50, 100, 150, 200, 250];
+	let freq_lst = [1, 10, 20, 50];
+
 	$storeHP = [
 					{ pow: 0, freq: 1 },
 					{ pow: 0, freq: 1 },
@@ -52,7 +55,7 @@
 	}
 
 	function changeDrv(idx, type, val) {
-		$storeHP[idx][type] = val;
+		$storeHP[idx].pow = val;
 	}
 	
 </script>
@@ -65,12 +68,24 @@
 
 <div class="border-0 mx-2 my-2 rounded-xl grid grid-cols-1 justify-items-center bg-slate-100">
 	<div class="font-bold mx-2 my-2">ctrl haptic manually</div>
-
 	{#each drv_lst as i}
-		<div class="mx-2 my-0.5">drv {i} ...
-		pow:<input class="mx-2 my-2 py-0.5 w-24 border-0 rounded-lg bg-white shadow-md text-center" bind:value={ $storeHP[i].pow }>
-		<button on:click={ changeDrv(i, "pow", 1) }>1</button>
-		freq:<input class="mx-2 my-2 py-0.5 w-24 border-0 rounded-lg bg-white shadow-md text-center" bind:value={ $storeHP[i].freq }></div>
+	<div class="flex flex-cols-2 items-center">
+		<div class="mx-2 my-0.5">drv {i}</div>
+		<div class="mx-2">
+			<div>
+			pow:<input class="mx-2 my-2 py-0.5 w-12 border-0 rounded-lg bg-white shadow-md text-center" bind:value={ $storeHP[i].pow }>
+			{#each pow_lst as p}
+			<button class="mx-1 my-2 py-0.5 px-2 rounded-lg shadow-md text-white bg-gray-500" on:click={ () => $storeHP[i].pow = p }>{p}</button>
+			{/each}
+			</div>
+			<div>
+			freq:<input class="mx-2 my-2 py-0.5 w-12 border-0 rounded-lg bg-white shadow-md text-center" bind:value={ $storeHP[i].freq }>
+			{#each freq_lst as f}
+			<button class="mx-1 my-2 py-0.5 px-2 rounded-lg shadow-md text-white bg-gray-500" on:click={ () => $storeHP[i].freq = f }>{f}</button>
+			{/each}
+			</div>
+		</div>
+	</div>
 	{/each}
 	<div class="mx-2 my-0.5">
 		<button class="mx-2 my-2 py-0.5 px-4 w-36 rounded-lg shadow-md text-white bg-blue-500" on:click={ async () => {const res = await fetch(`http://54.180.122.164:3000/updatedb/testhaptic/`, {method: 'POST', body:JSON.stringify($storeHP), headers:{'Content-Type': 'application/json'}});} }>test</button>
