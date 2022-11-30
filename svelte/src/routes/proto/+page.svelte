@@ -70,18 +70,18 @@
 	<div class="font-bold mx-2 my-2">ctrl haptic manually</div>
 	{#each drv_lst as i}
 	<div class="flex flex-cols-2 items-center">
-		<div class="mx-2 my-0.5">drv {i}</div>
-		<div class="mx-2">
+		<div class="mx-1 my-0.5">drv {i}</div>
+		<div class="mx-1">
 			<div>
-			pow:<input class="mx-2 my-2 py-0.5 w-12 border-0 rounded-lg bg-white shadow-md text-center" bind:value={ $storeHP[i].pow }>
+			pow:<input class="mx-1 my-2 py-0.5 w-12 border-0 rounded-lg bg-white shadow-md text-center" bind:value={ $storeHP[i].pow }>
 			{#each pow_lst as p}
-			<button class="mx-1 my-2 py-0.5 px-2 rounded-lg shadow-md text-white bg-gray-500" on:click={ () => $storeHP[i].pow = p }>{p}</button>
+			<button class="mx-0.5 my-2 py-0.5 px-2 rounded-lg shadow-md text-white bg-gray-500" on:click={ () => $storeHP[i].pow = p }>{p}</button>
 			{/each}
 			</div>
 			<div>
-			freq:<input class="mx-2 my-2 py-0.5 w-12 border-0 rounded-lg bg-white shadow-md text-center" bind:value={ $storeHP[i].freq }>
+			freq:<input class="mx-1 my-2 py-0.5 w-12 border-0 rounded-lg bg-white shadow-md text-center" bind:value={ $storeHP[i].freq }>
 			{#each freq_lst as f}
-			<button class="mx-1 my-2 py-0.5 px-2 rounded-lg shadow-md text-white bg-gray-500" on:click={ () => $storeHP[i].freq = f }>{f}</button>
+			<button class="mx-0.5 my-2 py-0.5 px-2 rounded-lg shadow-md text-white bg-gray-500" on:click={ () => $storeHP[i].freq = f }>{f}</button>
 			{/each}
 			</div>
 		</div>
