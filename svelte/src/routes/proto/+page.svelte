@@ -50,6 +50,10 @@
 		
 		removeList();
 	}
+
+	function changeDrv(idx, type, val) {
+		$storeHP[idx][type] = val;
+	}
 	
 </script>
 
@@ -65,6 +69,7 @@
 	{#each drv_lst as i}
 		<div class="mx-2 my-0.5">drv {i} ...
 		pow:<input class="mx-2 my-2 py-0.5 w-24 border-0 rounded-lg bg-white shadow-md text-center" bind:value={ $storeHP[i].pow }>
+		<button on:click={ changeDrv(i, "pow", 1) }>1</button>
 		freq:<input class="mx-2 my-2 py-0.5 w-24 border-0 rounded-lg bg-white shadow-md text-center" bind:value={ $storeHP[i].freq }></div>
 	{/each}
 	<div class="mx-2 my-0.5">
